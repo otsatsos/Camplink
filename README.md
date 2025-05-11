@@ -1,8 +1,8 @@
-## Camplink
+# Camplink
 This is Camplink 🏕️. A web app to discover campings around the world
 
 
-# React + Vite
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
