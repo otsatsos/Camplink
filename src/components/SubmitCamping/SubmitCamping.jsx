@@ -1,25 +1,24 @@
 import Navbar from "../Navbar/Navbar";
-import CampingsOverviewSection from "../CampingsOverviewSection/CampingsOverviewSection.jsx";
 import logo from "../../assets/navbar-logo.png";
+import FormSubmitCamping from "../FormSubmitCamping/FormSubmitCamping.jsx";
 
-const HomePage = () => {
-
+const SubmitCamping = () => {
   return (
     <>
       <Navbar
         img={logo}
         altText="Camplink logo"
         imgLink=""
-        buttonsText={["Submit a camping", "Sign in"]}
+        buttonsText={["Explore", "Sign in"]}
         buttonStyle={[
           "font-medium p-2 cursor-pointer hover:text-[#226933]",
           "bg-[#357b45] text-[#FFFBF5] p-2 cursor-pointer rounded-md hover:bg-[#226933]",
         ]}
-        buttonsLinks={["",""]}
+        buttonsLinks={["", ""]}
       />
-      <CampingsOverviewSection />
+      <FormSubmitCamping />
     </>
   );
 };
 
-export default HomePage;
+export default SubmitCamping;

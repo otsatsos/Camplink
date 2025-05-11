@@ -393,12 +393,17 @@ export const CAMPINGS = [
 ];
 
 export const REGIONS = [
+  "Attica",
+  "Central Greece",
+  "Crete",
+  "Eastern Macedonia & Thrace",
+  "Central Macedonia",
+  "Western Macedonia",
+  "North Aegean",
+  "Ionian Islands",
   "Thessaly",
   "Cyclades",
   "Epirus",
   "Peloponnese",
-  "Central Macedonia",
-  "Crete",
-  "Western Macedonia",
-  "Sporades",
+  "South Aegean",
 ].sort((a, b) => a.localeCompare(b));

@@ -1,22 +1,20 @@
-import logo from "../../assets/navbar-logo.png";
+
 import NavbarButton from "../NavbarButton/NavbarButton";
 
-const Navbar = () => {
+const Navbar = ({ img, altText, imgLink, buttonsText, buttonStyle, buttonsLinks }) => {
   return (
     <>
       <nav className="w-full h-20 fixed z-10 top-0 right-0 left-0 flex items-center justify-between bg-[#FFFBF5] border-b-1 border-b-solid border-b-[#F9EFE0] shadow-xs shadow-[#F9EFE0] text-[#28282B]">
-        <img
-          src={logo}
-          alt="Camplink Logo"
-          className="ml-7 h-20 hover:cursor-pointer"
-        />
+        <a href={imgLink} className="ml-2 hover:cursor-pointer">
+          <img src={img} alt={altText} className="h-20" />
+        </a>
         <div>
           <ul className="flex gap-6 mr-12.5 text-lg">
-            <NavbarButton className="bg-[#41804F] text-[#FFFDFF] p-2 cursor-pointer rounded-md hover:bg-[#226933]">
-              Explore
+            <NavbarButton className={buttonStyle[0]}>
+              {buttonsText[0]}  
             </NavbarButton>
-            <NavbarButton className="p-2 cursor-pointer transform hover:-translate-y-0.25 duration-200 hover:text-[#2C2F23]">
-              Saved
+            <NavbarButton className={buttonStyle[1]}>
+              {buttonsText[1]}
             </NavbarButton>
           </ul>
         </div>
