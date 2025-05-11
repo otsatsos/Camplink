@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CAMPINGS } from "../../Data.js";
 import CampingDetailsTile from "../CampingDetailsTile/CampingDetailsTile.jsx";
 
 const CampingOverviewTile = ({
