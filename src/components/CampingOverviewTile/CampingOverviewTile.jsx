@@ -1,6 +1,3 @@
-import { useState } from "react";
-import CampingDetailsTile from "../CampingDetailsTile/CampingDetailsTile.jsx";
-
 const CampingOverviewTile = ({
   id,
   name,
@@ -10,19 +7,15 @@ const CampingOverviewTile = ({
   telephone,
   email,
   img,
+  tileClicked,
+  setTileClicked
 }) => {
-  const [overviewVisible, setOverviewVisible] = useState(true);
 
-  const handleTileClick = () => {
-    setOverviewVisible(!overviewVisible);
-    return;
-  };
-
-  return overviewVisible ? (
+  return (
     <div
       id={id}
       className="w-[30%] h-110 mb-5 flex rounded-md transition-transform hover:-translate-y-0.25 cursor-pointer"
-      onClick={() => handleTileClick()}
+      onClick={() => setTileClicked(!tileClicked)}
     >
       <div>
         <img src={img} className="w-full object-fill rounded-md" />
@@ -37,10 +30,6 @@ const CampingOverviewTile = ({
         </div>
       </div>
     </div>
-  ) : (
-    <CampingDetailsTile
-      {...{ id, name, location, amenities, description, telephone, email, img }}
-    />
   );
 };
 

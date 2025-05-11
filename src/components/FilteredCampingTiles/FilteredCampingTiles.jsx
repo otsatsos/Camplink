@@ -1,5 +1,5 @@
 import { CAMPINGS } from "../../Data.js";
-import CampingOverviewTile from "../CampingOverviewTile/CampingOverviewTile";
+import CampingTile from "../CampingTile/CampingTile.jsx";
 
 const FilteredCampingTiles = ({ region }) => {
   const filteredCampings = CAMPINGS.filter((camping) => {
@@ -11,14 +11,22 @@ const FilteredCampingTiles = ({ region }) => {
       {region === "All regions" ? (
         <div className="w-[80%] m-auto mt-10 flex flex-wrap gap-4 items-center justify-evenly text-[#28282B]">
           {CAMPINGS.map((camping) => {
-            return <CampingOverviewTile {...camping} />;
+            return (
+              <CampingTile
+                {...camping}
+              />
+            );
           })}
         </div>
       ) : (
         <div className="w-[80%] m-auto mt-10 flex flex-wrap gap-4 items-center justify-evenly text-[#28282B]">
-          {filteredCampings.map((camping) => (
-            <CampingOverviewTile key={camping.id} {...camping} />
-          ))}
+          {filteredCampings.map((camping) => {
+            return (
+              <CampingTile
+                {...camping}
+              />
+            );
+          })}
         </div>
       )}
     </>

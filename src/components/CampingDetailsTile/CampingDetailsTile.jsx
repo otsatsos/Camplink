@@ -1,6 +1,3 @@
-import { useState } from "react";
-import CampingOverviewTile from "../CampingOverviewTile/CampingOverviewTile";
-
 const CampingDetailsTile = ({
   id,
   name,
@@ -10,18 +7,13 @@ const CampingDetailsTile = ({
   telephone,
   email,
   img,
+  tileClicked,
+  setTileClicked,
 }) => {
-  const [detailsVisible, setDetailsVisible] = useState(true);
-
-  const handleTileClick = () => {
-    setDetailsVisible(!detailsVisible);
-    return;
-  };
-
-  return detailsVisible ? (
+  return (
     <div
       className="w-[30%] h-110 mb-5 pt-4 pl-4 pb-2 bg-[#FAAA48] rounded-md transition-transform hover:-translate-y-0.25 cursor-pointer text-[#28282B]"
-      onClick={() => handleTileClick()}
+      onClick={() => setTileClicked(!tileClicked)}
     >
       <div>
         <h2 className="text-2xl font-semibold">{name}</h2>
@@ -40,10 +32,6 @@ const CampingDetailsTile = ({
         <li>{email}</li>
       </ul>
     </div>
-  ) : (
-    <CampingOverviewTile
-      {...{ id, name, location, amenities, description, telephone, email, img }}
-    />
   );
 };
 
