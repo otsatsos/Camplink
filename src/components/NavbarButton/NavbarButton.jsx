@@ -1,7 +1,16 @@
-const NavbarButton = ({ children, ...props }) => {
+import { useNavigate } from "react-router-dom";
+
+const NavbarButton = ({ children, style, link }) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(link);
+  };
+
   return (
-    <li>
-      <button {...props}>{children}</button>
+    <li className="list-none">
+      <button onClick={handleClick} className={style}>{children}</button>
     </li>
   );
 };

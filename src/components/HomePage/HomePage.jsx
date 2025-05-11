@@ -3,19 +3,18 @@ import CampingsOverviewSection from "../CampingsOverviewSection/CampingsOverview
 import logo from "../../assets/navbar-logo.png";
 
 const HomePage = () => {
-
   return (
     <>
       <Navbar
         img={logo}
         altText="Camplink logo"
-        imgLink=""
-        buttonsText={["Submit a camping", "Sign in"]}
+        buttonsText={["", "Submit a camping", "Sign in"]}
         buttonStyle={[
+          "p-2 ml-9 hover:cursor-pointer",
           "font-medium p-2 cursor-pointer hover:text-[#226933]",
           "bg-[#357b45] text-[#FFFBF5] p-2 cursor-pointer rounded-md hover:bg-[#226933]",
         ]}
-        buttonsLinks={["",""]}
+        buttonsLinks={["/", "/submit-camping", ""]}
       />
       <CampingsOverviewSection />
     </>
