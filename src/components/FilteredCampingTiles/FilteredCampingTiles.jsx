@@ -12,25 +12,33 @@ const FilteredCampingTiles = ({ region }) => {
     return camping.region === region;
   });
 
+  let camps = "";
+  if (region === "All regions") {
+    camps = CAMPINGS;
+  } else {
+    camps = filteredCampings;
+  }
+
   return (
     <>
-      {region === "All regions" ? (
+      {camps.length > 0 ? (
         <div className="w-[80%] m-auto mt-10 flex flex-wrap gap-4 items-center justify-evenly text-[#28282B]">
-          {CAMPINGS.map((camping) => {
-            return <CampingTile {...camping} />;
-          })}
-        </div>
-      ) : regionHasCamping(region) ? (
-        <div className="w-[80%] m-auto mt-10 flex flex-wrap gap-4 items-center justify-evenly text-[#28282B]">
-          {filteredCampings.map((camping) => {
-            return <CampingTile {...camping} />;
+          {camps.map((camping) => {
+            return <CampingTile key={camping.id} tile={camping} {...camping} />;
           })}
         </div>
       ) : (
-            <NAMessage title="There are no camping inputs yet" message="Do you have a suggestion?" cta={"Submit a camping"} link="/submit-camping" />
+        <NAMessage
+          title="There are no camping inputs yet"
+          message="Do you have a suggestion?"
+          cta={"Submit a camping"}
+          link="/submit-camping"
+        />
       )}
     </>
   );
 };
 
-export default FilteredCampingTiles;
+export default FilteredCampingTiles
+
+ //
