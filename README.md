@@ -1,5 +1,5 @@
 # Camplink
-This is Camplink 🏕️. A web app to discover campings around the world!
+This is Camplink 🏕️. A web app to discover campings around the world! Currently supporting Greece.
 
 
 ## React + Vite
