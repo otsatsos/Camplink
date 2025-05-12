@@ -3,11 +3,6 @@ import NAMessage from "../NAMessage/NAMessage.jsx";
 import CampingTile from "../CampingTile/CampingTile.jsx";
 
 const FilteredCampingTiles = ({ region }) => {
-
-  const regionHasCamping = (region) => {
-    return CAMPINGS.filter((camping) => camping.region === region).length>0;
-  }
-
   const filteredCampings = CAMPINGS.filter((camping) => {
     return camping.region === region;
   });
@@ -39,6 +34,6 @@ const FilteredCampingTiles = ({ region }) => {
   );
 };
 
-export default FilteredCampingTiles
+export default FilteredCampingTiles;
 
- //
+//
