@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const NavbarButton = ({ children, style, link }) => {
+const Button = ({ children, style, link }) => {
 
   const navigate = useNavigate();
 
@@ -15,4 +15,4 @@ const NavbarButton = ({ children, style, link }) => {
   );
 };
 
-export default NavbarButton;
+export default Button;
