@@ -2,11 +2,11 @@ import CampingOverviewTile from "../CampingOverviewTile/CampingOverviewTile";
 import CampingDetailsTile from "../CampingDetailsTile/CampingDetailsTile";
 import { useState } from "react";
 
-const CampingTile = ({ tile }) => {
+const CampingTile = ({ camping }) => {
   const [tileClicked, setTileClicked] = useState(false);
 
   const handleClick = () => {
-    setTileClicked(!tileClicked);
+    setTileClicked((clicked) => !clicked);
   };
   
   return (
@@ -17,12 +17,12 @@ const CampingTile = ({ tile }) => {
             ? "pt-4 pl-4 pb-2 bg-[#FAAA48] transition-transform text-[#28282B]"
             : "flex"
         } w-[30%] h-110 mb-5 rounded-md transition-transform hover:-translate-y-0.25 cursor-pointer`}
-        onClick={() => handleClick()}
+        onClick={handleClick}
       >
         {tileClicked ? (
-          <CampingDetailsTile tile={tile} />
+          <CampingDetailsTile camping={camping} />
         ) : (
-          <CampingOverviewTile tile={tile} />
+          <CampingOverviewTile camping={camping} />
         )}
       </div>
     </>

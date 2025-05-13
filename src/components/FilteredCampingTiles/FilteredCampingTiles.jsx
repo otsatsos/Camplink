@@ -3,15 +3,14 @@ import NAMessage from "../NAMessage/NAMessage.jsx";
 import CampingTile from "../CampingTile/CampingTile.jsx";
 
 const FilteredCampingTiles = ({ region }) => {
-  const filteredCampings = CAMPINGS.filter((camping) => {
-    return camping.region === region;
-  });
 
   let camps = "";
   if (region === "All regions") {
     camps = CAMPINGS;
   } else {
-    camps = filteredCampings;
+    camps = CAMPINGS.filter((camping) => {
+      return camping.region === region;
+    });
   }
 
   return (
@@ -19,7 +18,7 @@ const FilteredCampingTiles = ({ region }) => {
       {camps.length > 0 ? (
         <div className="w-[80%] m-auto mt-10 flex flex-wrap gap-4 items-center justify-evenly text-[#28282B]">
           {camps.map((camping) => {
-            return <CampingTile key={camping.id} tile={camping} {...camping} />;
+            return <CampingTile key={camping.id} camping={camping} />;
           })}
         </div>
       ) : (
@@ -35,5 +34,3 @@ const FilteredCampingTiles = ({ region }) => {
 };
 
 export default FilteredCampingTiles;
-
-//

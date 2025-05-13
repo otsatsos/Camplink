@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const Button = ({ children, style, link }) => {
-
+const NavButton = ({ children, style, link }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -10,9 +9,11 @@ const Button = ({ children, style, link }) => {
 
   return (
     <li className="list-none">
-      <button onClick={handleClick} className={style}>{children}</button>
+      <button onClick={handleClick} className={style}>
+        {children}
+      </button>
     </li>
   );
 };
 
-export default Button;
+export default NavButton;
