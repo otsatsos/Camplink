@@ -407,3 +407,21 @@ export const REGIONS = [
   "Peloponnese",
   "South Aegean",
 ].sort((a, b) => a.localeCompare(b));
+
+export const AMENITIES = [
+  "WiFi",
+  "Hot showers",
+  "WC",
+  "Supermarket",
+  "Electricity hook-up",
+  "Drinking water",
+  "Barbecue area",
+  "Laundry facilities",
+  "Swimming pool",
+  "Beach access",
+  "Restaurant",
+  "Playground",
+  "Pet-friendly",
+  "Bike rental",
+  "First aid station",
+].sort((a, b) => a.localeCompare(b));

@@ -1,6 +1,6 @@
-const SubmitFormButton = ({ children, style }) => {
+const SubmitFormButton = ({ children, style, onSubmit}) => {
     return <>
-        <button className={style}>{children}</button>
+        <button type="submit" className={style}>{children}</button>
     </>
 }
 
